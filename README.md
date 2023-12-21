@@ -81,20 +81,20 @@
    <h2 align="center">Решение задач</h2>
    **### app.js
 ```javascript
-const express = require("express");
+const express = require('express');
 const app = express();
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(`${__dirname}/home4`));
 
-app.get("/", function(request, response)
-{
-    response.sendFile("public/index.html");
+app.get('/', (req, resp) => {
+    resp.sendFile(`${__dirname}/index.html`);
 });
 
-app.listen(3000, function(request, response)
-{
-    console.log("Server online.");
+app.listen(3001, ()=>{
+
+    console.log('Server online');
 });
+
 ```
 
 ### script.js
